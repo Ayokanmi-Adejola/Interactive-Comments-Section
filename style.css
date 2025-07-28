@@ -1,0 +1,468 @@
+/* CSS Variables from Style Guide */
+:root {
+  /* Primary Colors */
+  --purple-600: hsl(238, 40%, 52%);
+  --pink-400: hsl(358, 79%, 66%);
+  --purple-200: hsl(239, 57%, 85%);
+  --pink-200: hsl(357, 100%, 86%);
+  
+  /* Neutral Colors */
+  --grey-800: hsl(212, 24%, 26%);
+  --grey-500: hsl(211, 10%, 45%);
+  --grey-100: hsl(223, 19%, 93%);
+  --grey-50: hsl(228, 33%, 97%);
+  --white: hsl(0, 100%, 100%);
+  
+  /* Typography */
+  --font-family: 'Rubik', sans-serif;
+  --font-size-base: 16px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 2.5rem;
+  
+  /* Border Radius */
+  --border-radius: 8px;
+  --border-radius-lg: 12px;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
+  color: var(--grey-500);
+  background-color: var(--grey-50);
+  min-height: 100vh;
+}
+
+/* Container */
+.container {
+  max-width: 730px;
+  margin: 0 auto;
+  padding: var(--spacing-lg) var(--spacing-sm);
+}
+
+/* Comments Container */
+.comments-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Comment Card */
+.comment {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.username {
+  font-weight: var(--font-weight-medium);
+  color: var(--grey-800);
+}
+
+.you-badge {
+  background: var(--purple-600);
+  color: var(--white);
+  padding: 2px 6px;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: var(--font-weight-medium);
+}
+
+.timestamp {
+  color: var(--grey-500);
+}
+
+.comment-text {
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.5;
+}
+
+.comment-text .mention {
+  color: var(--purple-600);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Voting */
+.vote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--grey-50);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xs);
+  gap: var(--spacing-xs);
+  height: fit-content;
+}
+
+.vote-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.vote-btn:hover {
+  background: var(--purple-200);
+}
+
+.vote-btn:hover svg path {
+  fill: var(--purple-600);
+}
+
+.vote-score {
+  font-weight: var(--font-weight-medium);
+  color: var(--purple-600);
+  font-size: 16px;
+}
+
+/* Action Buttons */
+.comment-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-weight: var(--font-weight-medium);
+  font-size: 16px;
+  padding: var(--spacing-xs);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.reply-btn {
+  color: var(--purple-600);
+}
+
+.reply-btn:hover {
+  color: var(--purple-200);
+}
+
+.edit-btn {
+  color: var(--purple-600);
+}
+
+.edit-btn:hover {
+  color: var(--purple-200);
+}
+
+.delete-btn {
+  color: var(--pink-400);
+}
+
+.delete-btn:hover {
+  color: var(--pink-200);
+}
+
+/* Replies */
+.replies-container {
+  margin-left: var(--spacing-lg);
+  padding-left: var(--spacing-lg);
+  border-left: 2px solid var(--grey-100);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Forms */
+.comment-form {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+}
+
+.comment-form textarea {
+  flex: 1;
+  border: 1px solid var(--grey-100);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-sm);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  resize: vertical;
+  min-height: 96px;
+}
+
+.comment-form textarea:focus {
+  outline: none;
+  border-color: var(--purple-600);
+}
+
+.comment-form textarea::placeholder {
+  color: var(--grey-500);
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  border-radius: var(--border-radius);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background: var(--purple-600);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--purple-200);
+}
+
+.btn-secondary {
+  background: var(--grey-500);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background: var(--grey-800);
+}
+
+.btn-danger {
+  background: var(--pink-400);
+  color: var(--white);
+}
+
+.btn-danger:hover {
+  background: var(--pink-200);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal h2 {
+  color: var(--grey-800);
+  margin-bottom: var(--spacing-sm);
+  font-size: 20px;
+}
+
+.modal p {
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.5;
+}
+
+.modal-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.modal-actions .btn {
+  flex: 1;
+}
+
+/* Attribution */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: var(--spacing-xl);
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Edit textarea styling */
+.edit-textarea {
+  width: 100% !important;
+  min-height: 96px !important;
+  border: 1px solid var(--purple-600) !important;
+  border-radius: var(--border-radius) !important;
+  padding: var(--spacing-sm) !important;
+  font-family: var(--font-family) !important;
+  font-size: var(--font-size-base) !important;
+  margin-bottom: var(--spacing-sm) !important;
+  resize: vertical;
+}
+
+.edit-textarea:focus {
+  outline: none;
+  border-color: var(--purple-600);
+}
+
+/* Reply form styling */
+.reply-form {
+  margin-top: var(--spacing-sm);
+}
+
+/* Smooth transitions */
+.comment, .modal, .btn, .vote-btn, .action-btn {
+  transition: all 0.2s ease;
+}
+
+/* Focus styles for accessibility */
+.btn:focus,
+.vote-btn:focus,
+.action-btn:focus,
+textarea:focus {
+  outline: 2px solid var(--purple-600);
+  outline-offset: 2px;
+}
+
+/* Hover effects */
+.comment:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading state */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  color: var(--grey-500);
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--grey-500);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-sm);
+  }
+
+  .comment {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .comment-header {
+    justify-content: space-between;
+  }
+
+  .comment-actions {
+    order: 1;
+    justify-content: space-between;
+  }
+
+  .vote-container {
+    flex-direction: row;
+    order: 2;
+    align-self: flex-start;
+    width: fit-content;
+    gap: var(--spacing-sm);
+  }
+
+  .replies-container {
+    margin-left: var(--spacing-sm);
+    padding-left: var(--spacing-sm);
+  }
+
+  .comment-form {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .comment-form .avatar {
+    order: -1;
+    align-self: flex-start;
+  }
+
+  .comment-form .btn {
+    align-self: flex-end;
+    width: fit-content;
+  }
+
+  .modal {
+    margin: var(--spacing-sm);
+    padding: var(--spacing-lg);
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .comment-form textarea {
+    min-height: 80px;
+  }
+
+  .avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .vote-container {
+    padding: 6px;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
