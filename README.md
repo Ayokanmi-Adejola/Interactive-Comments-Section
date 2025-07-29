@@ -1,6 +1,6 @@
 # Interactive Comments Section
 
-A fully responsive and interactive comments system built with vanilla JavaScript, featuring real-time CRUD operations, voting functionality, and persistent data storage.
+A fully responsive and interactive comments system built with vanilla JavaScript, featuring real-time CRUD operations, voting functionality, and persistent data storage
 
 ![Interactive Comments Section Preview](preview.jpg)
 
